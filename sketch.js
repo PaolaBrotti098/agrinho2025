@@ -50,12 +50,14 @@ function desenhaJogadores(){
   text("😺", Xjogador2 ,300);
 }
 function desenhaLinhaDeChegada(){
-  fill("#FA0010");
-  rect(350,0,10,400);
-  fill("black");
-  for(let yAtual=0; yAtual< 400; yAtual += 20){
-    rect(350, yAtual, 10,10);
-    
+ let s=10; 
+ for(let x=0;x<4;x++) 
+ for(let y=0;y<400/s;y++)
+  {fill((x+y)%2==0?0:255);
+  rect(x*s+300,y*s,s,s);} 
+  stroke(20,0,0); 
+  strokeWeight(4);
+  line(s*10+200,0,s*10+200,height);
     
       
 }
